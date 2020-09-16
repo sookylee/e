@@ -13,11 +13,11 @@ var server = app.listen(8080, function(req, res){
 });
 
 app.get('/',function(req, res){
-    res.render('test.html');
+    res.render('login.html');
 });
 
-app.get('/login', function(req,res){
-    res.render('login.html');
+app.get('/register', function(req,res){
+    res.render('register.html');
 });
 
 module.exports = app;
