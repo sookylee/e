@@ -20,4 +20,12 @@ app.get('/register', function(req,res){
     res.render('register.html');
 });
 
+app.get('/manage', function(req, res){
+    res.render('manage.html');
+});
+
+var path = require('path');
+app.use(express.static(path.join(__dirname,'/../web')));
+
+
 module.exports = app;
