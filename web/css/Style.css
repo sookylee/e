@@ -198,7 +198,8 @@ form .btn-login{
 
 form .form-group .date-css{
     padding: .5rem 1rem;
-    font-family: "Montserrat";
+    font-family: "Arvo", sans-serif;
+    color: #666666;
     font-size: .9rem;
     border: none;
     background: transparent;
