@@ -26,7 +26,7 @@ App = {
   
     initContract: function() {
       
-      $.getJSON('/contracts/TimeCap.json', function(data) {
+      $.getJSON('/json/Timecap.json', function(data) {
         // Get the necessary contract artifact file and instantiate it with truffle-contract.
         var TimeCapArtifact = data;
         

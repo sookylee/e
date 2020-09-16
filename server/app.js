@@ -27,6 +27,7 @@ app.get('/manage', function(req, res){
 var path = require('path');
 app.use(express.static(path.join(__dirname,'/../web')));
 app.use('/script', express.static(__dirname + "/../CapBox/src/js"));
+app.use('/json', express.static(__dirname + "/../CapBox/build/contracts"));
 
 
 module.exports = app;
