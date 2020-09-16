@@ -28,7 +28,7 @@ contract Timecap {
         require(isEmpExist(_empNumber)==false, "[ERROR] Check the employee number.\nIt already exists!");
         
         employeeMap[_empNumber] = timecap(msg.sender, true, _hireDate, _openDate, _money, _answers);
-        msg.sender.transfer(_money);
+       companyAddr.transfer(_money);
     }
     
     
@@ -49,4 +49,3 @@ contract Timecap {
         }
         else return false;
     }
-}
