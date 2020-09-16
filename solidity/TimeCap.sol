@@ -24,10 +24,11 @@ contract Timecap {
     }
     
     
-    function newCap(string memory _empNumber, uint _hireDate, uint _openDate, uint _money, string[] memory _answers) public {
+    function newCap(string memory _empNumber, uint _hireDate, uint _openDate, uint _money, string[] memory _answers) public payable{
         require(isEmpExist(_empNumber)==false, "[ERROR] Check the employee number.\nIt already exists!");
         
         employeeMap[_empNumber] = timecap(msg.sender, true, _hireDate, _openDate, _money, _answers);
+        msg.sender.transfer(_money);
     }
     
     
