@@ -12,7 +12,7 @@ html, body{
 /* Variables */
 :root{
     --primary-gradient: linear-gradient(to right, #4e4376, #2b5876);
-    --mango-gradient : linear-gradient(to right, #ffa751, #ffe259);
+    --mango-gradient : linear-gradient(to right, #155095, #155095);
     --text-color: #F7F9F9;
     --Montserrat: "Montserrat", cursive;
     --Lobster: "Lobster", cursive;
@@ -194,4 +194,12 @@ form .btn-login{
     float: none;
     padding: .8rem 5rem;
     margin-left: 2rem;
+}
+
+form .form-group .date-css{
+    padding: .5rem 1rem;
+    font-family: "Montserrat";
+    font-size: .9rem;
+    border: none;
+    background: transparent;
 }
