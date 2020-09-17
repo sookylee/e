@@ -24,20 +24,20 @@ html,body {
 .box h2 {
     margin: 0;
     padding: 0;
-    margin: 0 0 30px;
-    text-align: center;
+	margin: 0 0 30px;
+	text-align: center;
+	color: #000000;
   }
 
 .box .title{
-	font-size: 30px;
+	font-size: 25px;
 }
 body {
-	margin: 30px 0px 0px 0px;
 	padding: 0;
 	background: #155095 url(images/img01.jpg) repeat-y left top;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 13px;
-	color: #FFFFFF;
+	color: #000000;
 }
 
 h1, h2, h3 {
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-	font-size: 2.8em;
+	font-size: 40px;
 }
 
 h3 {
@@ -236,7 +236,7 @@ a:hover {
 }
 
 .post .title a {
-	color: #FFFFFF;
+	color: #000000;
 	border: none;
 }
 
@@ -281,19 +281,3 @@ a:hover {
 
 
 /* Footer */
-
-#footer {
-	width: 500px;
-	padding: 0px 0 35px 40px;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-#footer p {
-	margin: 0;
-	padding-top: 20px;
-	line-height: normal;
-}
-
-#footer a {
-}
-
