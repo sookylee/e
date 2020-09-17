@@ -30,7 +30,7 @@
     width: 100%;
     padding: 10px 0;
      
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     border: none;
     letter-spacing: 1px;
     background: transparent;
@@ -43,7 +43,8 @@
     top: 0;
     left: 0;
     padding: 10px 0;
-     
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     pointer-events: none;
     letter-spacing: 1px;
     transition: .5s;
@@ -54,7 +55,7 @@
     top: -18px;
     left: 0; 
     color:#080000;
-    font-size: 12px;
+    font-size: 15px;
   }
   .box .selectBox {
     position: relative;
