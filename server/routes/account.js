@@ -40,7 +40,7 @@ router.post('/', function(req, res){
 
     var connection = db_connect();
     var query = "SELECT empNum FROM root WHERE empNum='" + id + "' and pwd='" + pwd + "';";
-    console.log(query);
+    //console.log(query);
 
     connection.query(query, function(err, result){
         if(err){
@@ -55,12 +55,13 @@ router.post('/', function(req, res){
             }
             else {
                 connection.end();
-                res.send("<Script> alert('Please register first!'); </script>");
-                return res.redirect('/register');
+                res.write("<script>alert('Please register first!')</script>");
+                return res.write('<script>window.location="/register"</script>');
             }
         }
     });
 });
+
 
 
 module.exports = router;
