@@ -8,7 +8,7 @@ app.engine('html', require('ejs').renderFile);
 var accountRouter = require('./routes/account.js');
 
 
-app.use('/login', accountRouter);
+app.use('/', accountRouter);
 
 
 var server = app.listen(8080, function(req, res){
@@ -22,9 +22,6 @@ app.get('/',function(req, res){
     res.redirect('/login');
 });
 
-app.get('/register', function(req,res){
-    res.render('register.html');
-});
 
 app.get('/manage', function(req, res){
     res.render('manage.html');

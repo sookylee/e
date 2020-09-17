@@ -19,7 +19,7 @@ function db_connect(){
 }
 
 function db_insert(datas){
-    var query = "INSERT INTO root (empNum, ename, phone, wallet, hireDate, openDate, pwd, money, company) VALUES (";
+    var query = "INSERT INTO root (empNum,  phone, hireDate, openDate, pwd, money, company) VALUES (";
     
     for(i=0;i<datas.length;i++){
         query += "'"+ datas[i] + "'";

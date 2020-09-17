@@ -29,12 +29,12 @@ function db_connect(){
 }
 
 
-router.get('/',function(req, res){
+router.get('/login',function(req, res){
     return res.render('login.html');
 });
 
 //sign in
-router.post('/', function(req, res){
+router.post('/login', function(req, res){
     var id = req.body.empnum;
     var pwd = req.body.pwd;
 
@@ -62,6 +62,73 @@ router.post('/', function(req, res){
     });
 });
 
+//get sign up page
+router.get('/register', function(req,res){
+    res.render('register.html');
+});
+
+//sign up
+router.post('/register', function(req, res){
+    var id = req.body.id;
+    var pwd = req.body.pwd;
+    var hiredate = req.body.hiredate;
+    var tel = req.body.tel;
+
+    //hard coding :(
+    var tmpDate = req.body.hiredate.split('-');
+    var opendate = (parseInt(tmpDate[0])+3).toString()+"-"+tmpDate[1]+"-"+tmpDate[2];
+    var money = 2243818640217;
+    var company = "농협정보시스템";
+    var datas = [id, tel, hiredate, opendate, pwd, money, company];
+
+    var connection = db_connect();
+
+    //check if empNum already exists in db 
+    var query1 = "SELECT empNum FROM root WHERE empNum='" + id + "';";
+    connection.query(query1, function(err, result){
+        if(err){
+            console.log(err);
+            res.json(0);
+            return;
+        }
+        else {
+            if(result.length > 0){
+                res.write("<script> alert('You already registered!\nPlease sign in.')</script>");
+                res.end("<script>window.location='/login'</script>");
+                connection.end();
+                return;
+            }
+            else {
+                // insert datas in db
+                var query = "INSERT INTO root (empNum, phone, hireDate, openDate, pwd, money, company) VALUES (";
+                for(i=0;i<datas.length;i++){
+                    query += "'"+ datas[i] + "'";
+                    if(i!=datas.length-1){
+                        query += ",";
+                    }
+                    else {
+                        query += ");";
+                    }
+                }
+                connection.query(query, function(err, rows){
+                    console.log(rows);
+                    if(err){
+                        console.log(err);
+                        res.json(0);
+                    }
+                    else{
+                        console.log('[Success] new employee data has inserted in db.');
+                        res.write("<script>alert('Welcome!\nNow write your Capsule on Blockchain.')</script>");
+                        res.write("<script>window.location='/capsule/write'</script>");
+                    }
+                });
+                connection.end();
+                console.log("new employee data has inserted.");
+            }
+        }
+    });
+   
+});
 
 
 module.exports = router;

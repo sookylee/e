@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col login">
-                    <form>
+                    <form action="/register" method="POST">
                         <div class="titles">
                             <h6>We keep everything</h6>
                             <h3>Ready to register</h3>
@@ -54,7 +54,7 @@
                             <div class="input-icon">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <input type="text" placeholder="Pid" class="form-input">
+                            <input type="text" placeholder="Pid" class="form-input" name="id">
                             
                         </div>
 
@@ -62,21 +62,21 @@
                             <div class="input-icon">
                                 <i class="fas fa-user-lock"></i>
                             </div>
-                            <input type="password" placeholder="Password" class="form-input">
+                            <input type="password" placeholder="Password" class="form-input" name="pwd">
                         </div>
                         
                         <div class="form-group">
                             <div class="input-icon">
                                 <i class="fas fa-calendar"></i>
                             </div>
-                            <input type="date" placeholder="Hiredate" class="date-css">
+                            <input type="date" placeholder="Hiredate" class="date-css" name="hiredate">
                         </div>
 
                         <div class="form-group">
                             <div class="input-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <input type="tel" placeholder="Tel" class="form-input">
+                            <input type="tel" placeholder="Tel" class="form-input" name="tel">
                         </div>
 
                         <button type="submit" class="btn btn-login">Register</button>
