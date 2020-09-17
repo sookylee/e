@@ -6,10 +6,9 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 var server = app.listen(8080, function(req, res){
-    var host = server.address().address;
     var port = server.address().port;
 
-    console.log('listening at http://%s%s', host, port);
+    console.log('listening at http:localhost:%s', port);
 });
 
 app.get('/',function(req, res){
