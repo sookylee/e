@@ -55,8 +55,8 @@ router.post('/login', function(req, res){
             }
             else {
                 connection.end();
-                res.write("<script>alert('Please register first!')</script>");
-                return res.write('<script>window.location="/register"</script>');
+                res.write("<script>alert('Please register first!');</script>");
+                res.write('<script>window.location="/register";</script>');
             }
         }
     });
@@ -93,8 +93,8 @@ router.post('/register', function(req, res){
         }
         else {
             if(result.length > 0){
-                res.write("<script> alert('You already registered!\nPlease sign in.')</script>");
-                res.end("<script>window.location='/login'</script>");
+                res.write("<script>alert('You already registered! Please sign in.');</script>");
+                res.write("<script>window.location='/login';</script>");
                 connection.end();
                 return;
             }
@@ -118,8 +118,8 @@ router.post('/register', function(req, res){
                     }
                     else{
                         console.log('[Success] new employee data has inserted in db.');
-                        res.write("<script>alert('Welcome!\nNow write your Capsule on Blockchain.')</script>");
-                        res.write("<script>window.location='/capsule/write'</script>");
+                        res.write("<script>alert('Welcome! Now write your Capsule on Blockchain.');</script>");
+                        res.write("<script>window.location='/capsule/write';</script>");
                     }
                 });
                 connection.end();
