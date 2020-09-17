@@ -23,6 +23,10 @@ app.get('/manage', function(req, res){
     res.render('manage.html');
 });
 
+app.get('/capsule/write', function(req, res){
+    res.render('writeLetter.html');
+})
+
 var path = require('path');
 app.use(express.static(path.join(__dirname,'/../web')));
 app.use('/script', express.static(__dirname + "/../CapBox/src/js"));
