@@ -18,9 +18,12 @@ contract Timecap {
     }
     
     
-    constructor (string memory _company) public {
-        company = _company;
+    constructor () public {
         companyAddr = msg.sender;
+    }
+
+    function setName(string memory _company) public {
+        company = _company;
     }
     
     

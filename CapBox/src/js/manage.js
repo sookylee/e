@@ -17,7 +17,7 @@ App = {
       } else {
         // set the provider you want from Web3.providers
         
-        App.web3Provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545');
+        App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8080/manage');
         web3 = new Web3(App.web3Provider);
       }
   
@@ -58,6 +58,8 @@ App = {
          console.log(company + "'s contract has deployed.");
 
          ManagingInstance = instance;
+         console.log(ManagingInstance);
+         return instance.setName(company);
          
           //return instance.cancelConcert(artist);
         }).then(function(result) {
