@@ -13,23 +13,23 @@
         <h2>NH Time capsule</h2>
         <form>
           <div class="inputBox">
-            <input type="text" name="" required />
+            <input type="text" name="answer" required />
             <label>현재 애인(또는 전 애인)의 이름은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="" required />
+            <input type="text" name="answer" required />
             <label>가장 잘 맞을 것 같은 동기 이름은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="" required />
+            <input type="text" name="answer" required />
             <label>지금 하늘에서 10만원이 떨어진다면?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="" required />
+            <input type="text" name="answer" required />
             <label>지금 가장 중요하게 생각하는 것은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="" required />
+            <input type="text" name="answer" required />
             <label>후배에게 어떤 선배가 되고 싶은지?</label>
           </div>
           <div class="textBox">
@@ -38,13 +38,19 @@
             >
             <br />
 
-            <textarea name="connemt" id="txt" rows="6"> </textarea>
+            <textarea name="connemt" id="txt" rows="6" name="answer"> </textarea>
           </div>
          
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" id="submit"/>
         </form>
       </div>
     </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/script/bootstrap.min.js"></script>
+    <script src="/script/web3.min.js"></script>
+    <script src="/script/truffle-contract.js"></script>
+    <script src="/script/manage.js"></script>
   </body>
 </html>
