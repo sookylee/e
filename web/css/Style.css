@@ -39,6 +39,7 @@ html, body{
     grid-template-columns: 65% 35%;
     height: 100%;
     background: #fff;
+    border-radius: 20px;
 }
 
 .liquid{
