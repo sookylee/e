@@ -2,16 +2,19 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended : true}));
-
 const db_isValid = require('./db_module').db_isValid;
 const db_checkPwd = require('./db_module').db_checkPwd;
 const db_insert = require('./db_module').db_insert;
 
 var mysql = require('mysql');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mysqlStore = require('express-mysql-session')(session);
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended : true}));
+
+router.use(cookieParser());
 
 
 function db_connect(){
@@ -71,12 +74,13 @@ router.get('/register', function(req,res){
 router.post('/register', function(req, res){
     var id = req.body.id;
     var pwd = req.body.pwd;
-    var hiredate = req.body.hiredate;
     var tel = req.body.tel;
 
     //hard coding :(
     var tmpDate = req.body.hiredate.split('-');
-    var opendate = (parseInt(tmpDate[0])+3).toString()+"-"+tmpDate[1]+"-"+tmpDate[2];
+    var tmp = tmpDate[0]+tmpDate[1]+tmpDate[2];
+    var hiredate = parseInt(tmp);
+    var opendate = parseInt((parseInt(tmpDate[0])+3).toString()+tmpDate[1]+tmpDate[2]);
     var money = 2243818640217;
     var company = "농협정보시스템";
     var datas = [id, tel, hiredate, opendate, pwd, money, company];
@@ -129,6 +133,7 @@ router.post('/register', function(req, res){
     });
    
 });
+
 
 
 module.exports = router;
