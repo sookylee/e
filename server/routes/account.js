@@ -1,17 +1,66 @@
-var express = requie('express');
+var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended : true}));
 
-mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password: '00000000',
-    database: 'name'
+const db_isValid = require('./db_module').db_isValid;
+const db_checkPwd = require('./db_module').db_checkPwd;
+const db_insert = require('./db_module').db_insert;
+
+var mysql = require('mysql');
+var session = require('express-session');
+var mysqlStore = require('express-mysql-session')(session);
+
+
+function db_connect(){
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user:'e',
+        password: 'nh',
+        database: 'root'
+    });
+    connection.connect();
+
+    console.log("[Success] Connected with mySql.");
+
+    return connection;
+}
+
+
+router.get('/',function(req, res){
+    return res.render('login.html');
 });
-connection.connect();
+
+//sign in
+router.post('/', function(req, res){
+    var id = req.body.empnum;
+    var pwd = req.body.pwd;
+
+    var connection = db_connect();
+    var query = "SELECT empNum FROM root WHERE empNum='" + id + "' and pwd='" + pwd + "';";
+    console.log(query);
+
+    connection.query(query, function(err, result){
+        if(err){
+            console.log(err);
+            res.json(0);
+            connection.end();
+        }
+        else {
+            if(result.length > 0){
+                connection.end();
+                return res.redirect('/capsule/write');
+            }
+            else {
+                connection.end();
+                res.send("<Script> alert('Please register first!'); </script>");
+                return res.redirect('/register');
+            }
+        }
+    });
+});
 
 
+module.exports = router;

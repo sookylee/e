@@ -5,14 +5,21 @@ app.set('views',__dirname + '/../web');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
+var accountRouter = require('./routes/account.js');
+
+
+app.use('/login', accountRouter);
+
+
 var server = app.listen(8080, function(req, res){
     var port = server.address().port;
 
-    console.log('listening at http:localhost:%s', port);
+    console.log('listening at http://localhost:%s', port);
 });
 
+
 app.get('/',function(req, res){
-    res.render('login.html');
+    res.redirect('/login');
 });
 
 app.get('/register', function(req,res){
@@ -26,6 +33,8 @@ app.get('/manage', function(req, res){
 app.get('/capsule/write', function(req, res){
     res.render('writeLetter.html');
 })
+
+
 
 var path = require('path');
 app.use(express.static(path.join(__dirname,'/../web')));

@@ -1,6 +1,12 @@
 # e
 농협정보시스템 신입사원 교육 내 프로젝트
 
+## 필요한 설치 모듈
+* npm install mysql --save
+* npm install ejs --save
+* npm install truffle --save
+* npm install express-session --save
+* npm install express-mysql-session --save
 
 
 ## solidity function/code usage (작성된 것만 고려해주면 됨)
