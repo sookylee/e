@@ -92,11 +92,11 @@ h2{
 }
 
 .owl-dots .active{
-    border: 1px solid #ffd765 !important;
+    border: 1px solid #155095 !important;
 }
 
 .owl-dots .active span{
-    background: #ffd765 !important;
+    background: #155095 !important;
     margin: .3rem .5rem !important;
 }
 
