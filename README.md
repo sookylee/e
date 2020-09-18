@@ -3,10 +3,13 @@
 
 ## 필요한 설치 모듈
 * npm install mysql --save
+* npm install mysql2 --save
 * npm install ejs --save
 * npm install truffle --save
 * npm install express-session --save
 * npm install express-mysql-session --save
+* npm install sequelize --save
+* npm install -g sequelize-cli
 
 
 ## solidity function/code usage (작성된 것만 고려해주면 됨)
