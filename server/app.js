@@ -7,6 +7,14 @@ app.engine('html', require('ejs').renderFile);
 
 var accountRouter = require('./routes/account.js');
 
+//db connect
+const models = require("./models/index.js");
+models.sequelize.sync().then(() => {
+    console.log("Database connected");
+}).catch(err => {
+    console.log("Database connect failed");
+    console.log(err);
+});
 
 app.use('/', accountRouter);
 
