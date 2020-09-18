@@ -7,9 +7,17 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended : true}));
 
 const models = require('./../models');
+
 var mysql = require('mysql');
+var cookieParser = require('cookie-parser');
 var session = require('express-session');
 //var mysqlStore = require('express-mysql-session')(session);
+
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended : true}));
+
+router.use(cookieParser());
 
 
 router.use(session({
@@ -86,13 +94,15 @@ router.get('/register', function(req,res){
 router.post('/register', async function(req, res){
     var id = req.body.id;
     var pwd = crypto.createHash("sha512").update(req.body.pwd).digest("hex");
-    var tel = req.body.tel;
+
 
 
     //hard coding :(
     var tmpDate = req.body.hiredate.split('-');
+
     var hiredate = parseInt(tmpDate[0]+tmpDate[1]+tmpDate[2]);
     var opendate = (parseInt(tmpDate[0])+3).toString()+tmpDate[1]+tmpDate[2];
+
     var money = 2243818640217;
     var company = "농협정보시스템";
 
@@ -122,6 +132,7 @@ router.post('/register', async function(req, res){
         console.log(err);
     })
 });
+
 
 
 module.exports = router;
