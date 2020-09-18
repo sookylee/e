@@ -31,7 +31,16 @@ router.use(session({
 }));
 
 
+//logout
+router.get('/logout', function(req,res){
+    req.session.destroy(function(){
+        req.session;
+    });
+    res.redirect('/login');
+})
 
+
+// sign in
 router.get('/login',function(req, res){
     let session = req.session;
 
