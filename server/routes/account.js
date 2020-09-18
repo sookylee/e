@@ -87,14 +87,21 @@ router.post('/login', function(req, res){
 
 //get sign up page
 router.get('/register', function(req,res){
-    res.render('register.html');
+    res.render('register.html', {
+        session: session
+    });
 });
 
 //sign up
 router.post('/register', async function(req, res){
+    if(req.session.empNum){
+        res.redirect("/login");
+        return;
+    }
+
     var id = req.body.id;
     var pwd = crypto.createHash("sha512").update(req.body.pwd).digest("hex");
-
+    var tel = req.body.tel;
 
 
     //hard coding :(
@@ -127,7 +134,7 @@ router.post('/register', async function(req, res){
         opendate: opendate
     }).then(result => {
         res.write("<script>alert('Welcome! register completed.')</script>");
-        res.redirect("/register");
+        res.write("<script>document.location='/login'</script>");
     }).catch(err => {
         console.log(err);
     })
