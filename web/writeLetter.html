@@ -12,7 +12,7 @@
       <div class="box">
         <h2>NH Time Capsule</h2>
         <div class="emp">
-          <span id="">Someone</span> <span>님! 안녕하세요!</span>
+          <span id="empnum"></span><%=session.empnum %> <span>님, 안녕하세요!</span>
         </div>
         <form>
           <div class="inputBox">
@@ -41,19 +41,20 @@
             >
             <br />
 
-            <textarea name="connemt" id="txt" rows="6" name="answer"> </textarea>
+            <textarea id="txt" rows="6" name="answer"> </textarea>
           </div>
          
-
           <input type="submit" value="Submit" id="submit"/>
         </form>
       </div>
     </div>
+    <div hidden id="hardcoding"><%=session.empnum %>,<%=session.hiredate %>,<%=session.opendate %>,<%=session.money %></div>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="/script/bootstrap.min.js"></script>
     <script src="/script/web3.min.js"></script>
     <script src="/script/truffle-contract.js"></script>
-    <script src="/script/manage.js"></script>
+    <script src="/script/writeletter.js"></script>
   </body>
 </html>

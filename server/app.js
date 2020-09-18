@@ -36,7 +36,9 @@ app.get('/manage', function(req, res){
 });
 
 app.get('/capsule/write', function(req, res){
-    res.render('writeLetter.html');
+    res.render('writeLetter.html', {
+        session: req.session
+    });
 })
 
 app.get('/main', function(req,res){

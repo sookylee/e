@@ -1,4 +1,3 @@
-  
 App = {
     web3Provider: null,
     contracts: {},
@@ -55,13 +54,16 @@ App = {
       var ManagingInstance;
         App.contracts.Timecap.deployed().then(function(instance) {
           var answers = new Array();
-          $("input[name='answer']").each(function(i){
-            answers.push($("input[name='answer']").eq(i).attr("value"));
+          $("input[name=answer]").each(function(i){
+            answers.push($("input[name=answer]").eq(i).val());
           });
-         
-
+          console.log(answers);
+          //get datas of user
+          var temp = $("#hardcoding").text().split(',');
+          console.log(temp);
+          
          ManagingInstance = instance;
-         return instance.newCap();
+         return instance.newCap(temp[0],temp[1],temp[2],temp[3],answers);
          
           //return instance.cancelConcert(artist);
         }).then(function(result) {
