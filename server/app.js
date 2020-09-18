@@ -39,6 +39,12 @@ app.get('/capsule/write', function(req, res){
     res.render('writeLetter.html');
 })
 
+app.get('/main', function(req,res){
+    res.render('mainPage.html', {
+        session: req.session
+    });
+})
+
 
 
 var path = require('path');

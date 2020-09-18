@@ -35,9 +35,16 @@ router.use(session({
 router.get('/login',function(req, res){
     let session = req.session;
 
-    res.render("login.ejs", {
-        session: session
-    });
+    if(req.session.empNum){
+        res.render("mainPage.html", {
+            session: session
+        });
+    }
+    else {
+        res.render("login.ejs", {
+            session: session
+        });
+    }
 });
 
 //sign in
@@ -68,7 +75,7 @@ router.post('/login', function(req, res){
             req.session.opendate = response.dataValues.opendate;
             req.session.money = response.dataValues.money;
 
-            res.redirect("/login");
+            res.redirect("/main");
         }
         else {
             console.log("[Error] wrong password.");
@@ -87,18 +94,11 @@ router.post('/login', function(req, res){
 
 //get sign up page
 router.get('/register', function(req,res){
-    res.render('register.html', {
-        session: session
-    });
+        res.render('register.html');
 });
 
 //sign up
 router.post('/register', async function(req, res){
-    if(req.session.empNum){
-        res.redirect("/login");
-        return;
-    }
-
     var id = req.body.id;
     var pwd = crypto.createHash("sha512").update(req.body.pwd).digest("hex");
     var tel = req.body.tel;
