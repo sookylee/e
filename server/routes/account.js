@@ -118,7 +118,8 @@ router.post('/register', async function(req, res){
 
     var hiredate = parseInt(tmpDate[0]+tmpDate[1]+tmpDate[2]);
     var opendate = (parseInt(tmpDate[0])+3).toString()+tmpDate[1]+tmpDate[2];
-
+    
+    //var money = 100;
     var money = 2243818640217;
     var company = "농협정보시스템";
 
