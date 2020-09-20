@@ -6,6 +6,7 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 var accountRouter = require('./routes/account.js');
+var capsuleRouter = require('./routes/capsule.js');
 
 //db connect
 const models = require("./models/index.js");
@@ -17,6 +18,7 @@ models.sequelize.sync().then(() => {
 });
 
 app.use('/', accountRouter);
+app.use('/capsule', capsuleRouter);
 
 
 var server = app.listen(8080, function(req, res){
@@ -35,11 +37,6 @@ app.get('/manage', function(req, res){
     res.render('manage.html');
 });
 
-app.get('/capsule/write', function(req, res){
-    res.render('writeLetter.html', {
-        session: req.session
-    });
-})
 
 app.get('/main', function(req,res){
     res.render('mainPage.html', {
