@@ -19,7 +19,11 @@
 				<span>농협정보시스템 <span class="bp-icon bp-icon-about" data-content="NH Information System"></span></span>
 				<h1>NH Time Capsule</h1><br>
 				<div class="txt1">
-					<span id="">Someone</span> <span>님, 안녕하세요!</span>
+					<% if(session.empnum) { %>
+					<span id=""><%=session.empnum %></span> <span>님, 안녕하세요! <a href="/logout">로그아웃</a></span>
+					<% } else { %>
+					<span id="">로그인 해주세요. </span>
+					<% } %>
 				</div>
 				<nav>
 					<a href="https://www.nonghyupit.com/index.do" data-info="Homepage"><span>Homepage</span></a>
