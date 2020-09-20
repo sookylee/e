@@ -17,13 +17,14 @@
 		<div class="container">
 			<header class="clearfix">
 				<span>농협정보시스템 <span class="bp-icon bp-icon-about" data-content="NH Information System"></span></span>
-				<h1>NH Time Capsule</h1>
+				<h1>NH Time Capsule</h1><br>
 				<nav>
 					<a href="https://www.nonghyupit.com/index.do" data-info="Homepage"><span>Homepage</span></a>
 					<!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
 				</nav>
 			</header>	
 			<div class="main">
+				<% if(!session.empnum) { %>
 				<ul class="cbp-ig-grid">
 					<li>
 						<a href="/login">
@@ -40,6 +41,7 @@
 						</a>
 					</li>
 				</ul>
+				<% } else { %>
 				<ul class="cbp-ig-grid">
 					<li>
 						<a href="/capsule/write">
@@ -57,6 +59,7 @@
 					</li>
 					
 				</ul>
+				<% } %>
 			</div>
 		</div>
 	</body>
