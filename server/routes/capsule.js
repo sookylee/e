@@ -15,13 +15,19 @@ router.get('/write', function(req, res){
     res.render('writeLetter.html', {
         session: req.session
     });
-})
+});
 
 
 router.get('/read', function(req,res){
-    res.render('readLetter.html', {
+    res.render('capsuleMain.html', {
         session: req.session
     });
-})
+});
+
+router.get('/read/view', function(req, res){
+    res.render('readLetter.html', {
+        session: req.session
+    })
+});
 
 module.exports = router;
