@@ -29,7 +29,7 @@ var server = app.listen(8080, function(req, res){
 
 
 app.get('/',function(req, res){
-    res.redirect('/login');
+    res.redirect('/main');
 });
 
 
