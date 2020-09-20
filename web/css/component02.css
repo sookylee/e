@@ -9,7 +9,14 @@
 	font-style: normal;
 }
 
-
+.txt1{
+	text-align: right;
+	margin-right: 190px;
+	font-family: 'anyoldicon';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+}
 /* General grid styles */
 .cbp-ig-grid {
 	list-style: none;
