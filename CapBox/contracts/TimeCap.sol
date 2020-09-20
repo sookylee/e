@@ -36,20 +36,47 @@ contract Timecap {
         require(isEmpExist(_empNumber)==false, "[ERROR] Check the employee number.\nIt already exists!");
         
         employeeMap[_empNumber] = timecap(msg.sender, true, _hireDate, _openDate, _money, _ans1, _ans2, _ans3, _ans4, _ans5, _ans6);
-       companyAddr.transfer(msg.value);
+       //companyAddr.transfer(msg.value);
     }
     
     
-    function openCap(string memory _empNumber) public payable returns (string memory){
+    function openCap(string memory _empNumber) public payable returns (string[] memory){
         require(isEmpExist(_empNumber)==true, "[ERROR] There's no capsule data of employee number.\nPlease check!");
         require(msg.sender == employeeMap[_empNumber].walletAddr, "[ERROR] Wrong wallet address!\nYou are not the owner.");
         require(block.timestamp >= employeeMap[_empNumber].openDate, "[ERROR] You can't open yet!");
         
         employeeMap[_empNumber].walletAddr.transfer(employeeMap[_empNumber].money);
-        
-        return employeeMap[_empNumber].ans1;
+        string[] memory arr = new string[](6);
+        arr[0] = employeeMap[_empNumber].ans1;
+        arr[1] = employeeMap[_empNumber].ans2;
+        arr[2] = employeeMap[_empNumber].ans3;
+        arr[3] = employeeMap[_empNumber].ans4;
+        arr[4] = employeeMap[_empNumber].ans5;
+        arr[5] = employeeMap[_empNumber].ans6;
+
+        return arr;
     }
-    
+    /*
+    function openCap2(string memory _empNumber) public view returns (string memory){
+        return employeeMap[_empNumber].ans2;
+    }
+
+    function openCap3(string memory _empNumber) public view returns (string memory){
+        return employeeMap[_empNumber].ans2;
+    }
+
+    function openCap4(string memory _empNumber) public view returns (string memory){
+        return employeeMap[_empNumber].ans2;
+    }
+
+    function openCap5(string memory _empNumber) public view returns (string memory){
+        return employeeMap[_empNumber].ans2;
+    }
+
+    function openCap6(string memory _empNumber) public view returns (string memory){
+        return employeeMap[_empNumber].ans2;
+    }
+    */
     
     function isEmpExist(string memory _empNumber) public view returns (bool){
         if(employeeMap[_empNumber].isValid){

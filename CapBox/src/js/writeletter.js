@@ -68,9 +68,11 @@ App = {
        var tmp = temp[3]+"0";
        return instance.newCap(temp[0],parseInt(temp[1],10),parseInt(temp[2],10),parseInt(temp[3],10),answers[0],answers[1],answers[2],answers[3],answers[4],answers[5], {value:parseInt(tmp, 10)});
        
-        //return instance.cancelConcert(artist);
       }).then(function(result) {
         console.log("result : "+result);
+        //
+        $(window).attr('location','http://localhost:8080');
+
         return App.getBalances();
       }).catch(function(err) {
       
