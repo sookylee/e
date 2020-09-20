@@ -96,7 +96,9 @@ a:hover {
 
 /* Content */
 
-
+.entry{
+	font-size: 20px;
+}
 
 .post {
 	background: url(images/img02.jpg) no-repeat left top;
