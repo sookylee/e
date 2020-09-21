@@ -13,11 +13,10 @@ body {
   height: 60%;
 }
 
-
 .pos{
-  position:relative; 
-  bottom:330px;
-  left: 1050px;
+  position:relative;
+  bottom: 330px;
+  left: 900%;
 }
 
 .img__description {
