@@ -59,19 +59,22 @@ App = {
          ReadLetterInstance = instance;
          //
          
-         return instance.openCap(empnum);
+         return ReadLetterInstance.openCap(empnum).then((result)=>{
+           console.log(Object.values(result));
+           console.log(Object.values(result)[1]);
+         });
          
-          //return instance.cancelConcert(artist);
         }).then(function(result) {
-          console.log("result : "+result);
-          $.cookie('ans1', result[0]);
-          $.cookie('ans2', result[1]);
-          $.cookie('ans3', result[2]);
-          $.cookie('ans4', result[3]);
-          $.cookie('ans5', result[4]);
-          $.cookie('ans6', result[5]);
+          //console.log("result : "+result);
+          $.cookie('ans1', "1");
+          $.cookie('ans2', "2"); 
+          $.cookie('ans3', "3");
+          $.cookie('ans4', "4");
+          $.cookie('ans5', "5");
+          $.cookie('ans6', "6");
+          //console.log(Object.values(result));
 
-          $(window).attr('location','http://localhost:8080/capsule/read/view');
+          //$(window).attr('location','http://localhost:8080/capsule/read/view');
           return App.getBalances();
         }).catch(function(err) {
         
