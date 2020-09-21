@@ -40,6 +40,7 @@ contract Timecap {
        //companyAddr.transfer(msg.value);
     }
     
+    event OpenEvent(string ans1, string ans2, string ans3, string ans4, string ans5, string ans6);
     //open capsule after opendate, and send money to the owner
     function openCap(string memory _empNumber) public payable returns (string[] memory){
         require(isEmpExist(_empNumber)==true, "[ERROR] There's no capsule data of employee number.\nPlease check!");
@@ -55,7 +56,7 @@ contract Timecap {
         arr[4] = employeeMap[_empNumber].ans5;
         arr[5] = employeeMap[_empNumber].ans6;
 
-        return arr;
+        emit OpenEvent(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5]);
     }
     /*
     function openCap2(string memory _empNumber) public view returns (string memory){

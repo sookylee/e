@@ -60,18 +60,29 @@ App = {
          //
          
          return ReadLetterInstance.openCap(empnum).then((result)=>{
-           console.log(Object.values(result));
-           console.log(Object.values(result)[1]);
+           instance.OpenEvent().watch((err1, res1) => {
+             console.log(res1);
+             $.removeCookie('ans1');
+             $.removeCookie('ans2');
+             $.removeCookie('ans3');
+             $.removeCookie('ans4');
+             $.removeCookie('ans5');
+             $.removeCookie('ans6');
+
+            $.cookie('ans1', res1.args.ans1);
+            $.cookie('ans2', res1.args.ans2); 
+            $.cookie('ans3', res1.args.ans3);
+            $.cookie('ans4', res1.args.ans4);
+            $.cookie('ans5', res1.args.ans5);
+            $.cookie('ans6', res1.args.ans6);
+            //console.log($.cookie('ans6'));
+            $(window).attr('location','http://localhost:8080/capsule/read/view');
+           })
          });
          
         }).then(function(result) {
           //console.log("result : "+result);
-          $.cookie('ans1', "1");
-          $.cookie('ans2', "2"); 
-          $.cookie('ans3', "3");
-          $.cookie('ans4', "4");
-          $.cookie('ans5', "5");
-          $.cookie('ans6', "6");
+          
           //console.log(Object.values(result));
 
           //$(window).attr('location','http://localhost:8080/capsule/read/view');
