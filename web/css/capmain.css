@@ -8,15 +8,15 @@ body {
 
 .image01{
   margin-left: 200px;
-  margin-top: 90px;
-  width: 60%;
-  height: 60%;
+  margin-top: 100px;
+  width: 75%;
+  height: 75%;
 }
 
 .pos{
   position:relative;
-  bottom: 330px;
-  left: 900%;
+  bottom: 580px;
+  left: 1630px;
 }
 
 .img__description {
