@@ -1,22 +1,40 @@
+
 body {
-    background-image: url('/assets/tree.jpg'); 
-    background-repeat: no-repeat; 
-    background-size: cover;
-}
-
-img:hover{
-    cursor:pointer;
-    -webkit-transform:scale(1.1);
-    -moz-transform:scale(1.1);  
-    -o-transform:scale(1.1);
-    transform:scale(1.1);
-    transition: transform .35s;
-    -o-transition: transform .35s;
-    -moz-transition: transform .35s;
-    -webkit-transition: transform .35s;
+  background-image: url('../assets/block.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 
 
+.image01{
+  margin-left: 200px;
+  margin-top: 120px;
+  width: 60%;
+  height: 60%;
+}
+
+
+.pos{
+  position:relative; 
+  bottom:330px;
+  left: 1050px;
+}
+
+.img__description {
+  position: relative;
+  text-align: center;
+  color: #000;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 25px;
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.pos:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
 
 .animated {
     -webkit-animation-duration: .5s;

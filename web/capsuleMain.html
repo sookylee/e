@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="/css/capmain.css" rel="stylesheet" type="text/css" />
+        <link href="./css/capmain.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <p style="text-align: center; margin-top: 26%; margin-left: 60%;">
-            <img src="/assets/present.png" id="opencap" class="animated bounce"/>
-        </p>
+        <div>
+            <img src="./assets/chain01.png" class="image01">
+        </div>
+        <div style="position: absolute;">
+            <div class="pos">
+            <img src="./assets/email.png" id="opencap" class="animated bounce" style="width: 120px; height: 120px;"/>
+            <p class="img__description">Click Me!!</p>
+            </div>
+        </div>
         <div hidden id="hidd"><%=session.empnum %></div>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="/script/jquery.cookie.js"></script>
