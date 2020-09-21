@@ -98,7 +98,7 @@ a:hover {
 /* Content */
 
 .entry{
-	font-size: 20px;
+	font-size: 30px;
 }
 
 .post {
@@ -142,7 +142,7 @@ a:hover {
 .post .entry {
 	padding: 0px 0px 20px 0px;
 	border-bottom: 1px dashed #DCD4A7;
-	text-align: justify;
+	text-align: center;
 }
 
 .links {
