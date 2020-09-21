@@ -13,13 +13,16 @@ Released   : 20101129
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="keywords" content="css3, html5, js, background video, fullscreen video">
+	<meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>HN Time Capsule</title>
 	<link href="/css/letter2.css" rel="stylesheet" type="text/css" media="screen" />
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="/script/jquery.cookie.js"></script>
+	<script src="https://use.typekit.net/nlq1kdt.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#ans1").text($.cookie('ans1'));
@@ -33,6 +36,19 @@ Released   : 20101129
 </head>
 
 <body>
+	<div id="container">
+		<video id="background_video" loop muted></video>
+		<div id="video_cover"></div>
+		<div id="overlay"></div>
+	
+		<div id="video_controls">
+		  <span id="play">
+			<img src="/assets/play.png">
+		  </span>
+		  <span id="pause">
+			<img src="/assets/pause.png">
+		  </span>
+		</div>
 	<div class="outer-box">
 		<div id="content" class="box">
 			<h2>NH Time Capsule</h2>
@@ -94,6 +110,8 @@ Released   : 20101129
 		</div>
 	</div>
 	<!-- end #content -->
+	<script src="/js/bideo.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>
