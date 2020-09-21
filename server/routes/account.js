@@ -36,7 +36,7 @@ router.get('/logout', function(req,res){
     req.session.destroy(function(){
         req.session;
     });
-    res.redirect('/login');
+    res.redirect('/main');
 })
 
 
