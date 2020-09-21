@@ -71,6 +71,7 @@ App = {
       }).then(function(result) {
         console.log("result : "+result);
         //
+        alert("You can open this page after "+$("#opendate").text());
         $(window).attr('location','http://localhost:8080');
 
         return App.getBalances();
