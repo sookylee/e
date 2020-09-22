@@ -4,16 +4,7 @@ Design by TEMPLATED
 http://templated.co
 Released for free under the Creative Commons Attribution License
 */
-@font-face {
-	font-family: 'anyoldicon';
-	src:url('../fonts/anyoldicon/anyoldicon.eot');
-	src:url('../fonts/anyoldicon/anyoldicon.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/anyoldicon/anyoldicon.woff') format('woff'),
-		url('../fonts/anyoldicon/anyoldicon.ttf') format('truetype'),
-		url('../fonts/anyoldicon/anyoldicon.svg#anyoldicon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Yeon+Sung&display=swap');
 
 .emp{
 	font-size: 18px;
@@ -21,7 +12,7 @@ Released for free under the Creative Commons Attribution License
 .outer-box {
     width: 100%;
     height: 100%;
-    height: auto;
+	height: auto;
     position: relative;
     background-size: cover;
   }
@@ -41,7 +32,7 @@ Released for free under the Creative Commons Attribution License
     margin: 0;
 	margin: 0 0 30px;
 	text-align: center;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 40px;
 	color: #000000;
   }
@@ -52,7 +43,7 @@ Released for free under the Creative Commons Attribution License
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 13px;
 	color: #000000;
 }
@@ -113,14 +104,13 @@ a:hover {
 }
 
 .post {
-	background: url(images/img02.jpg) no-repeat left top;
-	margin-bottom: 40px;
+
 }
 
 .post .title {
 	padding: 5px 0px 10px 65px;
 	text-transform: lowercase;
-	font-family: 'anyoldicon';
+	font-family: 'Yeon Sung', cursive;
 	letter-spacing: -.5px;
 }
 
@@ -134,7 +124,7 @@ a:hover {
 	margin-bottom: 30px;
 	padding: 5px 0px 5px 0px;
 	text-align: left;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 13px;
 	font-weight: bold;
 }
@@ -172,48 +162,36 @@ a:hover {
 /* Footer */
 #container {
 	overflow: hidden;
-	position: absolute;
+	position: relative;
 	top: 0; left: 0; right: 0; bottom: 0;
   }
 
   #background_video {
 	position: absolute;
-
 	top: 50%; left: 50%;
 	transform: translate(-50%, -50%);
 
 	object-fit: cover;
-	height: 100%; width: 100%;
+	height: 100%;
+	width: 100%;
   }
 
   #video_cover {
 	position: absolute;
 
-	width: 100%; height: 100%;
+	width: 100%; 
+	height: 100%;
 
 	background: url('./../assets/video_cover.jpeg') no-repeat;
-	background-size: cover;
-	background-position: center;
   }
 
   #video_controls {
 	position: absolute;
 	left: 50%;
-	transform: translate(-50%, 0);
   }
 
-  html, body {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-  }
+  
 
-  #play img {
-	width: 100px;
-  }
-  #pause img {
-	width: 90px;
-  }
   #pause {
 	display: none;
   }
@@ -228,7 +206,7 @@ a:hover {
 
   body {
 	text-align: center;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
   }
 
   #container {
@@ -254,7 +232,7 @@ a:hover {
   #main_content h1 {
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	color: #fff;
 	font-size: 35px;
   }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 @font-face {
 	font-family: 'anyoldicon';
 	src:url('../fonts/anyoldicon/anyoldicon.eot');
@@ -12,7 +13,7 @@
 .txt1{
 	text-align: right;
 	margin-right: 190px;
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
@@ -74,7 +75,7 @@
 }
 
 .cbp-ig-icon:before {
-	font-family: 'anyoldicon';
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size: 14em;
 	speak: none;
 	font-style: normal;
