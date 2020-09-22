@@ -4,7 +4,16 @@ Design by TEMPLATED
 http://templated.co
 Released for free under the Creative Commons Attribution License
 */
-
+@font-face {
+	font-family: 'anyoldicon';
+	src:url('../fonts/anyoldicon/anyoldicon.eot');
+	src:url('../fonts/anyoldicon/anyoldicon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/anyoldicon/anyoldicon.woff') format('woff'),
+		url('../fonts/anyoldicon/anyoldicon.ttf') format('truetype'),
+		url('../fonts/anyoldicon/anyoldicon.svg#anyoldicon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 .emp{
 	font-size: 18px;
@@ -32,7 +41,7 @@ Released for free under the Creative Commons Attribution License
     margin: 0;
 	margin: 0 0 30px;
 	text-align: center;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: 'anyoldicon';
 	font-size: 40px;
 	color: #000000;
   }
@@ -43,7 +52,7 @@ Released for free under the Creative Commons Attribution License
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: 'anyoldicon';
 	font-size: 13px;
 	color: #000000;
 }
@@ -111,7 +120,7 @@ a:hover {
 .post .title {
 	padding: 5px 0px 10px 65px;
 	text-transform: lowercase;
-	font-family: 'Times New Roman', Times, serif;
+	font-family: 'anyoldicon';
 	letter-spacing: -.5px;
 }
 
@@ -125,7 +134,7 @@ a:hover {
 	margin-bottom: 30px;
 	padding: 5px 0px 5px 0px;
 	text-align: left;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'anyoldicon';
 	font-size: 13px;
 	font-weight: bold;
 }
@@ -219,7 +228,7 @@ a:hover {
 
   body {
 	text-align: center;
-	font-family: 'proxima-nova', Helvetica;
+	font-family: 'anyoldicon';
   }
 
   #container {
@@ -245,7 +254,7 @@ a:hover {
   #main_content h1 {
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: 'proxima-nova-condensed', Helvetica;
+	font-family: 'anyoldicon';
 	color: #fff;
 	font-size: 35px;
   }

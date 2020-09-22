@@ -1,3 +1,14 @@
+@font-face {
+	font-family: 'anyoldicon';
+	src:url('../fonts/anyoldicon/anyoldicon.eot');
+	src:url('../fonts/anyoldicon/anyoldicon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/anyoldicon/anyoldicon.woff') format('woff'),
+		url('../fonts/anyoldicon/anyoldicon.ttf') format('truetype'),
+		url('../fonts/anyoldicon/anyoldicon.svg#anyoldicon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -25,7 +36,7 @@
     margin: 0 0 30px;
     font-size: 40px;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'anyoldicon';
     color: #000000;
   }
   .box .inputBox {
@@ -51,7 +62,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'anyoldicon';
     pointer-events: none;
     letter-spacing: 1px;
     transition: .5s;
@@ -146,7 +157,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'anyoldicon';
     pointer-events: none;
     letter-spacing: 1px;
     transition: .5s;
