@@ -6,8 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>NH Time Capsule</title>
     <link rel="stylesheet" href="/css/letter1.css" />
+    <script src="https://use.typekit.net/nlq1kdt.js"></script>
+	  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
-  <body>
+  <body sytle="overflow:auto;">
+    <div id="container">
+      <video id="background_video" loop muted></video>
+      <div id="video_cover"></div>
+      <div id="overlay"></div>
+    
+      <div id="video_controls">
+        <span id="play">
+        <img src="/assets/play.png">
+        </span>
+        <span id="pause">
+        <img src="/assets/pause.png">
+        </span>
+      </div>
     <div class="outer-box">
       <div class="box">
         <h2>NH Time Capsule</h2>
@@ -57,5 +72,7 @@
     <script src="/script/web3.min.js"></script>
     <script src="/script/truffle-contract.js"></script>
     <script src="/script/writeletter.js"></script>
+    <script src="/js/bideo.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
