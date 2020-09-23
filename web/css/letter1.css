@@ -82,7 +82,6 @@
   .box .selectBox select {
     margin-top: 15px;
     padding: 10px 0;
-     
     background: transparent;
     width: 100%;
     letter-spacing: 1px;
@@ -155,6 +154,7 @@
   .box .textBox textarea {
     margin-top:10px;
     margin-bottom: 60px;
+    margin-left: 50px;
     width: 85%;
     border-radius: 10px;
     border: 1px solid #000000;
@@ -162,8 +162,9 @@
     background: transparent;
     letter-spacing: 1px;
   }
-  .box .textBox span{
-    bottom: 200px;
+  .box .textBox span p{
+    text-align: left;
+    margin-left: 36px;
   }
   .outer-box {
     width: 100%;
