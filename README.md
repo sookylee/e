@@ -10,6 +10,8 @@
 * npm install express-mysql-session --save
 * npm install sequelize --save
 * npm install -g sequelize-cli
+* npm install moment --save
+* npm install moment-timezone
 
 
 ## solidity function/code usage (작성된 것만 고려해주면 됨)

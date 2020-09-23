@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>NH Time Capsule</title>
-    <link rel="stylesheet" href="./css/letter1.css" />
+    <link rel="stylesheet" href="/css/letter1.css" />
     <script src="https://use.typekit.net/nlq1kdt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
@@ -65,16 +65,13 @@
           </div>
           
           <div class="inputBox">
-            <span>Written date: <span><input type="text" name="answer" required /></span></span>
-           
+            <span>Written date: <span id="nowDate"></span></span>
           </div>
           <input type="submit" value="Submit" id="submit"/>
           
 
           
         </form>
-
-        
       </div>
     </div>
     <div hidden id="hardcoding"><%=session.empnum %>,<%=session.hiredate %>,<%=session.opendate %>,<%=session.money %></div>
@@ -88,5 +85,17 @@
     <script src="/script/writeletter.js"></script>
     <script src="/js/bideo.js"></script>
     <script src="/js/main.js"></script>
+
+    <script>
+      window.addEventListener('load', function() {
+        $.ajax({
+          url: "http://localhost:8080/capsule/time",
+          method:"GET"
+        }).done(function(res){
+          console.log(res);
+          $("#nowDate").text(res);
+        });
+      });
+    </script>
   </body>
 </html>
