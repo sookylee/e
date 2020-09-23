@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="./css/letter1.css" />
     <script src="https://use.typekit.net/nlq1kdt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script type="text/javascript">
+      
+      // 날짜를 yyyy-mm-dd 형식으로 만들어 줌.
+      function date_mask(objValue) {
+       var v = objValue.replace("--", "-");
+      
+          if (v.match(/^\d{4}$/) !== null) {
+              v = v + '-';
+          } else if (v.match(/^\d{4}\-\d{2}$/) !== null) {
+              v = v + '-';
+          }
+       
+          return v;
+      }
+      </script>
   </head>
   <body>
     <div id="container">
@@ -44,7 +60,7 @@
          
 
           <div class="inputBox">
-            <span>Open date: <span><input type="text" name="answer" required /></span></span>
+            <span>Open date: <span><input type="text" name="answer" onkeyup="this.value=date_mask(this.value)" maxlength="10"  required /></span></span>
            
           </div>
           
