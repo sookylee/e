@@ -69,5 +69,29 @@
 				<% } %>
 			</div>
 		</div>
+
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="/script/jquery.cookie.js"></script>
+        <script src="/script/bootstrap.min.js"></script>
+        <script src="/script/web3.min.js"></script>
+		<script src="/script/truffle-contract.js"></script>
+		<script>
+			window.addEventListener('load', function() {
+				if (typeof web3 !== 'undefined') {
+					console.log('web3 is enabled');
+					if (web3.currentProvider.isMetaMask === true) {
+						console.log('MetaMask is active');
+					} else {
+						console.log('MetaMask is not available');
+						alert("Please login metamask first!");
+						
+					}
+				} else {
+					console.log('web3 is not found');
+					alert("Please install Metamask and login to it first!");
+					window.open("https://metamask.io/");
+				}
+			});
+		</script>
 	</body>
 </html>
