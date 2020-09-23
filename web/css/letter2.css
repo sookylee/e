@@ -107,11 +107,13 @@ a:hover {
 
 }
 
-.post .title {
+.post span .title {
 	padding: 5px 0px 10px 65px;
 	text-transform: lowercase;
 	font-family: 'Yeon Sung', cursive;
 	letter-spacing: -.5px;
+	float: left;
+	margin-bottom: 70px;
 }
 
 .post .title a {
