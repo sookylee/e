@@ -29,9 +29,6 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	color: #000;
-}
 
 .container > header {
 	width: 90%;
@@ -108,23 +105,12 @@ a:hover {
 	border: 4px solid #155095;
 }
 
-.container > header nav a > span {
-	display: none;
-}
-
-.container > header nav a:hover:before {
-	content: attr(data-info);
-	color: #47a3da;
+.container > header nav a span{
 	position: absolute;
-	width: 600%;
+	color: #155095;
 	top: 120%;
 	text-align: right;
-	right: 0;
-	pointer-events: none;
-}
-
-.container > header nav a:hover {
-	background: #155095;
+	right: -20%;
 }
 
 .bp-icon:after {
