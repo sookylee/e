@@ -51,28 +51,37 @@ App = {
 
     
 
-    var ManagingInstance;
+    var WritingInstance;
       App.contracts.Timecap.deployed().then(function(instance) {
-        var answers = [];
+        var title = $("#title").val();
+        var answer = $("#txt").val();
+        var opend = $("#opend").val();
+        var writed = $("#nowDate").text();
+        var empnum = $("#hardcoding").text();
+
+        //fix javascript date to solidity date
+        var openDate = ((new Date(opend)).getTime()) /1000;
+        var writeDate = ((new Date(writed)).getTime()) /1000;
+        //console.log(openDate);
+        //console.log(writeDate);
+        /*
         $("input[name=answer]").each(function(i){
           answers.push($("input[name=answer]").eq(i).val());
         });
         answers.push($("#txt").val());
-        console.log(answers);
-        //get datas of user
-        var temp = $("#hardcoding").text().split(',');
-        console.log(temp);
+        */
         
-       ManagingInstance = instance;
+        //get datas of user
+        
+       WritingInstance = instance;
        //
-       var tmp = temp[3]+"0";
-       return instance.newCap(temp[0],parseInt(temp[1],10),parseInt(temp[2],10),parseInt(temp[3],10),answers[0],answers[1],answers[2],answers[3],answers[4],answers[5], {value:parseInt(tmp, 10)});
+       return WritingInstance.newCap(empnum, writeDate, openDate, title, answer);
        
       }).then(function(result) {
         console.log("result : "+result);
         //
-        alert("You can open this page after "+$("#opendate").text());
-        $(window).attr('location','http://localhost:8080');
+        alert("You can open this page after "+$("#opend").val());
+        //$(window).attr('location','http://localhost:8080');
 
         return App.getBalances();
       }).catch(function(err) {

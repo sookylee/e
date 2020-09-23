@@ -47,7 +47,7 @@
         </div>
         <form>
           <div class="inputBox">
-            <span>제목: <span><input type="text" name="answer" required /></span></span>
+            <span>제목: <span><input type="text" name="answer" id="title" required /></span></span>
            
           </div>
           <div class="textBox">
@@ -60,7 +60,7 @@
          
 
           <div class="inputBox">
-            <span>Open date: <span><input type="text" name="answer" onkeyup="this.value=date_mask(this.value)" maxlength="10"  placeholder="yyyy-mm-dd" required /></span></span>
+            <span>Open date: <span><input type="text" name="answer" id="opend" onkeyup="this.value=date_mask(this.value)" maxlength="10"  placeholder="yyyy-mm-dd" required /></span></span>
            
           </div>
           
@@ -74,8 +74,7 @@
         </form>
       </div>
     </div>
-    <div hidden id="hardcoding"><%=session.empnum %>,<%=session.hiredate %>,<%=session.opendate %>,<%=session.money %></div>
-    <div hidden id="opendate"><%=session.opendate %></div>
+    <div hidden id="hardcoding"><%=session.empnum %></div>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
