@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>NH Time Capsule Choice Page</title>
+		<meta name="description" content="Blueprint: Responsive Icon Grid" />
+		<meta name="keywords" content="icon grid, hover, responsive, portfolio, template" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="./css/default.css" />
+		<link rel="stylesheet" type="text/css" href="./css/component03.css" />
+		<script src="js/modernizr.custom02.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<span>농협정보시스템 <span class="bp-icon bp-icon-about" data-content="NH Information System"></span></span>
+				<h1>NH Time Capsule</h1><br>
+				<div class="txt1">
+					<% if(session.empnum) { %>
+					<span id=""><%=session.empnum %></span> <span>님, 안녕하세요! <a href="/logout" style="color: #155095">로그아웃</a></span>
+					<% } else { %>
+					<span id="">로그인 해주세요. </span>
+					<% } %>
+				</div>
+				<nav>
+					<a href="https://www.nonghyupit.com/index.do"><span>Homepage</span></a>
+					<!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
+				</nav>
+			</header>	
+            <br><br>
+            <ul class="cbp-ig-grid">
+                <li>
+                    <span>
+						<span class="title">제목: 
+						<span name="">제목은 제목이다</span></span>
+						<div style="clear: both;">&nbsp;</div>
+                    </span>
+                    <span>
+						<span class="title">Open date: 
+						<span name="">Open date</span></span>
+						<div style="clear: both;">&nbsp;</div>
+					</span>
+
+					<span>
+						<span class="title">Written date: 
+						<span name="">Written date</span></span>
+						<div style="clear: both;">&nbsp;</div>
+					</span>
+                </li>	
+
+            </ul>
+        </div>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="/script/jquery.cookie.js"></script>
+        <script src="/script/bootstrap.min.js"></script>
+        <script src="/script/web3.min.js"></script>
+		<script src="/script/truffle-contract.js"></script>
+		
+	</body>
+</html>
