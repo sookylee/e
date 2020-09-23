@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>NH Time Capsule</title>
-    <link rel="stylesheet" href="/css/letter1.css" />
+    <link rel="stylesheet" href="./css/letter1.css" />
+    <script src="https://use.typekit.net/nlq1kdt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
+    <div id="container">
+      <video id="background_video" loop muted></video>
+      <div id="video_cover"></div>
+      <div id="overlay"></div>
+    
+      <div id="video_controls">
+        <span id="play">
+        <img src="/assets/play.png">
+        </span>
+        <span id="pause">
+        <img src="/assets/pause.png">
+        </span>
+      </div>
     <div class="outer-box">
       <div class="box">
         <h2>NH Time Capsule</h2>
@@ -16,23 +31,23 @@
         </div>
         <form>
           <div class="inputBox">
-            <input type="text" name="answer" required />
+            <input type="text" name="answer" maxlength="10" required />
             <label>현재 애인(또는 전 애인)의 이름은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="answer" required />
+            <input type="text" name="answer" maxlength="10" required />
             <label>가장 잘 맞을 것 같은 동기 이름은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="answer" required />
+            <input type="text" name="answer" maxlength="100" required />
             <label>지금 하늘에서 10만원이 떨어진다면?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="answer" required />
+            <input type="text" name="answer" maxlength="100" required />
             <label>지금 가장 중요하게 생각하는 것은?</label>
           </div>
           <div class="inputBox">
-            <input type="text" name="answer" required />
+            <input type="text" name="answer" maxlength="100" required />
             <label>후배에게 어떤 선배가 되고 싶은지?</label>
           </div>
           <div class="textBox">
@@ -57,5 +72,7 @@
     <script src="/script/web3.min.js"></script>
     <script src="/script/truffle-contract.js"></script>
     <script src="/script/writeletter.js"></script>
+    <script src="/js/bideo.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

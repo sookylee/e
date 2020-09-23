@@ -13,15 +13,18 @@ Released   : 20101129
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="keywords" content="css3, html5, js, background video, fullscreen video">
+	<meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>HN Time Capsule</title>
+	<title>NH Time Capsule</title>
 	<link href="/css/letter2.css" rel="stylesheet" type="text/css" media="screen" />
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="/script/jquery.cookie.js"></script>
+	<script src="https://use.typekit.net/nlq1kdt.js"></script>
+	<script>try { Typekit.load({ async: true }); } catch (e) { }</script>
 	<script type="text/javascript">
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$("#ans1").text($.cookie('ans1'));
 			$("#ans2").text($.cookie('ans2'));
 			$("#ans3").text($.cookie('ans3'));
@@ -29,71 +32,81 @@ Released   : 20101129
 			$("#ans5").text($.cookie('ans5'));
 			$("#ans6").text($.cookie('ans6'));
 		});
-		</script>
+	</script>
 </head>
 
 <body>
-	<div class="outer-box">
-		<div id="content" class="box">
-			<h2>NH Time Capsule</h2>
-			<div class="emp">
-				<span class="date" style="text-align: left;" id=""><!--실제 편지 쓴 날짜 !--><%=session.hiredate %></span>
-				<span id="" style="margin-left: 395px;"><%= session.empnum %></span> <span>님! 안녕하세요!</span>
-			</div><br><br>
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 현재 애인(또는 전 애인)의 이름은? </a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans1">
-					<!--div에 id설정해서 이 부분에 내용 불러오면 될듯!-->
+	<div id="container">
+		<video id="background_video" loop muted></video>
+		<div id="video_cover"></div>
+		<div id="overlay"></div>
+
+		
+		<div class="outer-box">
+			<div id="content" class="box">
+				<h2>NH Time Capsule</h2>
+				<div class="emp">
+					<span class="date" style="text-align: left;" id="">
+						<!--실제 편지 쓴 날짜 !--><%=session.hiredate %></span>
+					<span id="" style="margin-left: 395px;"><%= session.empnum %></span> <span>님! 안녕하세요!</span>
+				</div><br><br>
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 현재 애인(또는 전 애인)의 이름은? </a></h2>
+
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans1">
+						<!--div에 id설정해서 이 부분에 내용 불러오면 될듯!-->
+					</div>
 				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 가장 잘 맞을 것 같은 동기 이름은?</a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans2">
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 가장 잘 맞을 것 같은 동기 이름은?</a></h2>
+
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans2">
 
 
+					</div>
 				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 지금 하늘에서 10만원이 떨어진다면?</a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans3">
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 지금 하늘에서 10만원이 떨어진다면?</a></h2>
 
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans3">
+
+					</div>
 				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 지금 가장 중요하게 생각하는 것은?</a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans4">
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 지금 가장 중요하게 생각하는 것은?</a></h2>
 
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans4">
+
+					</div>
 				</div>
-			</div>
 
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 후배에게 어떤 선배가 되고 싶은지?</a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans5">
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 후배에게 어떤 선배가 되고 싶은지?</a></h2>
 
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans5">
+
+					</div>
 				</div>
-			</div>
 
-			<div class="post">
-				<h2 class="title"><a href="#">n년 전, 미래의 나에게 하고 싶은 말</a></h2>
-				
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry" id="ans6">
+				<div class="post">
+					<h2 class="title"><a href="#">n년 전, 미래의 나에게 하고 싶은 말</a></h2>
 
+					<div style="clear: both;">&nbsp;</div>
+					<div class="entry" id="ans6">
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end #content -->
+	<script src="/js/bideo.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>
