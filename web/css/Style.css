@@ -1,17 +1,15 @@
 /* Import fonts from google font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
-@font-face {
-	font-family: 'anyoldicon';
-	src:url('../fonts/anyoldicon/anyoldicon.eot');
-	src:url('../fonts/anyoldicon/anyoldicon.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/anyoldicon/anyoldicon.woff') format('woff'),
-		url('../fonts/anyoldicon/anyoldicon.ttf') format('truetype'),
-		url('../fonts/anyoldicon/anyoldicon.svg#anyoldicon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 
+@font-face{
+    font-family: 'answer';
+    src:url('../font/DXCLSB-KSCpc-EUC-H.ttf');
+}
+@font-face{
+    font-family: 'chicken';
+    src:url(../font/Chicken\ Quiche.ttf);
+}
 html, body{
     overflow: hidden;
     background: #ffe259;
@@ -21,7 +19,6 @@ h2{
     text-align: center;
     font-size: 50px;
     color: #000000;
-    font-family: 'Noto Sans KR', sans-serif;
 }
 /* Variables */
 :root{
