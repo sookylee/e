@@ -42,9 +42,11 @@
     position: relative;
     font-family: 'answer';
     margin-bottom: 50px;
+    font-size: 40px;
   }
   .box .inputBox .chicken{
     font-family: 'answer';
+    font-size: 40px;
   }
   
   .box .inputBox input {
@@ -58,6 +60,7 @@
     border-radius: 5px;
     border-bottom: 1px solid #000000;
     font-family: 'answer';
+    font-size: 40px;
   }
   .box .inputBox span{
     font-family: 'chicken';
@@ -158,6 +161,7 @@
     position: relative;
     font-family: 'answer';
     margin-bottom: 50px;
+    font-size: 40px;
   }
   .box .textBox label {
     top: 0;
@@ -169,6 +173,7 @@
     transition: .5s;
   }
   .box .textBox textarea {
+    font-size: 40px;
     margin-top:10px;
     margin-bottom: 60px;
     margin-left: 50px;

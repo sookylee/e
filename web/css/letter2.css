@@ -130,6 +130,7 @@ a:hover {
 	letter-spacing: -.5px;
 	float: left;
 	margin-bottom: 100px;
+	font-size: 40px;
 }
 
 .post .title a {
@@ -138,7 +139,7 @@ a:hover {
 }
 
 .post .font01{
-	font-size: 25px;
+	font-size: 40px;
 	font-family: 'answer';
 	padding: 5px 0px 10px 65px;
 	text-transform: lowercase;
