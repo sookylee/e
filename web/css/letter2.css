@@ -6,6 +6,15 @@ Released for free under the Creative Commons Attribution License
 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Yeon+Sung&display=swap');
 
+@font-face{
+    font-family: 'answer';
+    src:url('../font/DXCLSB-KSCpc-EUC-H.ttf');
+}
+@font-face{
+    font-family: 'chicken';
+    src:url('../font/Chicken\ Quiche.ttf');
+}
+
 .emp{
 	font-size: 18px;
 }
@@ -38,7 +47,7 @@ Released for free under the Creative Commons Attribution License
     margin: 0;
 	margin: 0 0 30px;
 	text-align: center;
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'chicken';
 	font-size: 40px;
 	color: #000000;
   }
@@ -46,6 +55,7 @@ Released for free under the Creative Commons Attribution License
 .box .title{
 	font-size: 25px;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -119,7 +129,7 @@ a:hover {
 	font-family: 'Yeon Sung', cursive;
 	letter-spacing: -.5px;
 	float: left;
-	margin-bottom: 70px;
+	margin-bottom: 100px;
 }
 
 .post .title a {
@@ -127,6 +137,15 @@ a:hover {
 	border: none;
 }
 
+.post .font01{
+	font-size: 25px;
+	font-family: 'answer';
+	padding: 5px 0px 10px 65px;
+	text-transform: lowercase;
+	letter-spacing: -.5px;
+	float: left;
+	margin-bottom: 100px;
+}
 .post .meta {
 	overflow: hidden;
 	margin-bottom: 30px;

@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
+@font-face{
+  font-family: 'answer';
+  src:url('../font/DXCLSB-KSCpc-EUC-H.ttf');
+}
+@font-face{
+  font-family: 'chicken';
+  src:url('../font/Chicken\ Quiche.ttf');
+}
 * {
     box-sizing: border-box;
   }
@@ -27,16 +35,20 @@
     margin: 0 0 30px;
     font-size: 40px;
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'chicken';
     color: #000000;
   }
   .box .inputBox {
     position: relative;
-    height: auto;
+    font-family: 'answer';
+    margin-bottom: 50px;
+  }
+  .box .inputBox .chicken{
+    font-family: 'answer';
   }
   
   .box .inputBox input {
-    width: 85%;
+    width: 83%;
     padding: 10px 0;
     margin-bottom: 50px;
     border: none;
@@ -45,6 +57,10 @@
     outline: none;
     border-radius: 5px;
     border-bottom: 1px solid #000000;
+    font-family: 'answer';
+  }
+  .box .inputBox span{
+    font-family: 'chicken';
   }
   .box .inputBox label {
     position: absolute;
@@ -52,7 +68,7 @@
     left: 0;
     padding: 10px 0;
     font-size: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'chicken';
     pointer-events: none;
     letter-spacing: 1px;
     transition: .5s;
@@ -140,13 +156,14 @@
   }
   .box .textBox {
     position: relative;
+    font-family: 'answer';
+    margin-bottom: 50px;
   }
   .box .textBox label {
     top: 0;
     left: 0;
     padding: 10px 0;
     font-size: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
     pointer-events: none;
     letter-spacing: 1px;
     transition: .5s;
@@ -161,6 +178,7 @@
     height: auto;
     background: transparent;
     letter-spacing: 1px;
+    font-family: 'answer';
   }
   .box .textBox span p{
     text-align: left;
@@ -230,7 +248,7 @@
   
     body {
     text-align: center;
-    font-family: 'anyoldicon';
+    
     }
   
     #container {
