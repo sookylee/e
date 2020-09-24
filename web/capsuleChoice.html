@@ -9,9 +9,9 @@
 		<meta name="keywords" content="icon grid, hover, responsive, portfolio, template" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="./css/default.css" />
-		<link rel="stylesheet" type="text/css" href="./css/component03.css" />
-		<script src="js/modernizr.custom02.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/component03.css" />
+		<script src="/js/modernizr.custom02.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -20,37 +20,38 @@
 				<h1>NH Time Capsule</h1><br>
 				<div class="txt1">
 					<% if(session.empnum) { %>
-					<span id=""><%=session.empnum %></span> <span>님, 안녕하세요! <a href="/logout" style="color: #155095">로그아웃</a></span>
+					<span id="empnum"><%=session.empnum %></span> <span>님, 안녕하세요! <a href="/logout" style="color: #155095">로그아웃</a></span>
 					<% } else { %>
 					<span id="">로그인 해주세요. </span>
 					<% } %>
 				</div>
 				<nav>
-					<a href="https://www.nonghyupit.com/index.do"><span>Homepage</span></a>
+					<a href="/main"><span>Mainpage</span></a>
 					<!--a href="" class="bp-icon bp-icon-next" data-info="next Blueprint"><span>Next Blueprint</span></a-->
 				</nav>
 			</header>	
             <br><br>
-            <ul class="cbp-ig-grid">
+            <ul class="cbp-ig-grid" id="here">
+				<% for(var i=0; i< parseInt(""+session.boxes.length, 10); i++) { %>
                 <li>
-                    <span>
-						<span class="title">제목: 
-						<span name="">제목은 제목이다</span></span>
+                    <span class="click">
+						<span class="ind"><%=parseInt(session.boxes[i][0],10)+1 %>.  </span>
+						<span class="title"><%=session.boxes[i][1] %></span></span>
 						<div style="clear: both;">&nbsp;</div>
                     </span>
                     <span>
-						<span class="title">Open date: 
-						<span name="">Open date</span></span>
+						<span class="opendate">Open date: 
+						<span name=""><%=session.boxes[i][2] %></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
 
 					<span>
-						<span class="title">Written date: 
-						<span name="">Written date</span></span>
+						<span class="writedate">Written date: 
+						<span name=""><%=session.boxes[i][3] %></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
-                </li>	
-
+				</li>	
+				<% } %>
             </ul>
         </div>
 		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -58,6 +59,6 @@
         <script src="/script/bootstrap.min.js"></script>
         <script src="/script/web3.min.js"></script>
 		<script src="/script/truffle-contract.js"></script>
-		
+		<script src="/script/capsulechoice.js"></script>		
 	</body>
 </html>

@@ -27,13 +27,13 @@ contract Timecap {
     }
     
     //make new capsule for new employee
-    function newCap(string memory _empNumber, uint _writeDate, uint _openDate, string memory _title, string memory _ans) public payable{
+    function newCap(string memory _empNumber, uint _writeDate, uint _openDate, string memory _title, string memory _ans) public {
         timecap memory t = timecap(msg.sender, true, _writeDate, _openDate,  _title, _ans);
         employeeMap[_empNumber].push(t);
         //companyAddr.transfer(msg.value);
     }
     
-    event OpenAllEvent(timecap[] answers);
+    event OpenAllEvent(string title, uint writeDate, uint openDate, uint ind);
     event OpenEvent(string title, string ans);
     //open capsule after opendate, and send money to the owner
     
@@ -48,7 +48,9 @@ contract Timecap {
     function showCap(string memory _empNumber) public {
         require(isEmpExist(_empNumber)==true, "[ERROR] There's no capsule data of employee number.\nPlease check!");
         
-        emit OpenAllEvent(employeeMap[_empNumber]);
+        for(uint i=0;i<employeeMap[_empNumber].length;i++){
+            emit OpenAllEvent(employeeMap[_empNumber][i].title, employeeMap[_empNumber][i].openDate, employeeMap[_empNumber][i].writeDate, i);
+        }
     }
     
     //check if the employee already made the capsule

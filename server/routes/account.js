@@ -83,6 +83,7 @@ router.post('/login', function(req, res){
             req.session.hiredate = response.dataValues.hiredate;
             req.session.opendate = response.dataValues.opendate;
             req.session.money = response.dataValues.money;
+            req.session.boxes = [];
 
             res.redirect("/main");
         }

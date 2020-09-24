@@ -23,16 +23,6 @@ Released   : 20101129
 	<script src="/script/jquery.cookie.js"></script>
 	<script src="https://use.typekit.net/nlq1kdt.js"></script>
 	<script>try { Typekit.load({ async: true }); } catch (e) { }</script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#ans1").text($.cookie('ans1'));
-			$("#ans2").text($.cookie('ans2'));
-			$("#ans3").text($.cookie('ans3'));
-			$("#ans4").text($.cookie('ans4'));
-			$("#ans5").text($.cookie('ans5'));
-			$("#ans6").text($.cookie('ans6'));
-		});
-	</script>
 </head>
 
 <body>
@@ -45,36 +35,39 @@ Released   : 20101129
 
 		
 		<div class="outer-box">
-			<a href="./mainPage.html"><img src="./assets/arrow.png" class="image01"></a>
+			
 			<div id="content" class="box">
+				<a href="/main"><img src="/assets/arrow.png" class="image01"></a>
 				<h2>NH Time Capsule</h2>
+				<!--
 				<div class="emp">
 					<span class="date" style="text-align: left;" id="">
-						<!--실제 편지 쓴 날짜 !--><%=session.hiredate %></span>
+						실제 편지 쓴 날짜 <%=session.hiredate %></span> 
 					<span id="" style="margin-left: 395px;"><%= session.empnum %></span> <span>님! 안녕하세요!</span>
-				</div><br><br>
+				</div>-->
+				<br><br>
 				<div class="post">
 					<span>
 						<span class="title">제목: 
-						<span name="">제목은 제목이다</span></span>
+						<span name=""><%= datas[0] %></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
 					
 					<span>
-						<span class="font01">내용: 
-						<span name="">내용은 내용이다</span></span>
+						<span class="title">내용: 
+						<span name=""><%= datas[1] %></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
 					
 					<span>
-						<span class="title">Open date: 
-						<span name="">Open date</span></span>
+						<span class="title">
+						<span name=""></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
 
 					<span>
-						<span class="title">Written date: 
-						<span name="">Written date</span></span>
+						<span class="title"> 
+						<span name=""></span></span>
 						<div style="clear: both;">&nbsp;</div>
 					</span>
 					

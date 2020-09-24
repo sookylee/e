@@ -81,7 +81,7 @@ App = {
         console.log("result : "+result);
         //
         alert("You can open this page after "+$("#opend").val());
-        //$(window).attr('location','http://localhost:8080');
+        $(window).attr('location','http://localhost:8080');
 
         return App.getBalances();
       }).catch(function(err) {

@@ -50,41 +50,44 @@ App = {
       event.preventDefault();
   
       
-  
       var ReadLetterInstance;
         App.contracts.Timecap.deployed().then(function(instance) {
           
           //get datas of user
          var empnum = $("#hidd").text();
          ReadLetterInstance = instance;
-         //
          
-         return ReadLetterInstance.openCap(empnum).then((result)=>{
-           instance.OpenEvent().watch((err1, res1) => {
-             console.log(res1);
-             $.removeCookie('ans1');
-             $.removeCookie('ans2');
-             $.removeCookie('ans3');
-             $.removeCookie('ans4');
-             $.removeCookie('ans5');
-             $.removeCookie('ans6');
-
-            $.cookie('ans1', res1.args.ans1);
-            $.cookie('ans2', res1.args.ans2); 
-            $.cookie('ans3', res1.args.ans3);
-            $.cookie('ans4', res1.args.ans4);
-            $.cookie('ans5', res1.args.ans5);
-            $.cookie('ans6', res1.args.ans6);
-            //console.log($.cookie('ans6'));
-            $(window).attr('location','http://localhost:8080/capsule/read/view');
-           })
+         var arr11 = [];
+         return ReadLetterInstance.showCap(empnum).then(()=>{
+           
+          instance.OpenAllEvent().watch((err1, res1) => {
+            //var temp = [res1.args.ind.toNumber(), res1.args.title, getFormatDate(new Date(res1.args.writeDate.toNumber() * 1000)), getFormatDate(new Date(res1.args.openDate.toNumber() * 1000))];
+          arr11.push([res1.args.ind.toNumber(), res1.args.title, getFormatDate(new Date(res1.args.writeDate.toNumber() * 1000)), getFormatDate(new Date(res1.args.openDate.toNumber() * 1000))]);
+          //console.log(JSON.stringify(arr11));
+           //console.log($.cookie('ans6'));
+           //$(window).attr('location','http://localhost:8080/capsule/read/view');
+           //console.log(temp);
+           //console.log(JSON.stringify(temp));
+           //var tmp = JSON.stringify(temp);
+            $.ajax({
+              url: "http://localhost:8080/capsule/read",
+              method: "POST",
+              async: true,
+              data: {boxes: arr11},
+              success: function(){
+                $(window).attr('location','http://localhost:8080/capsule/read/choice');
+              }
+            });
+            //console.log(arr);
+          });
          });
-         
+
+
         }).then(function(result) {
           //console.log("result : "+result);
           
           //console.log(Object.values(result));
-
+  
           //$(window).attr('location','http://localhost:8080/capsule/read/view');
           return App.getBalances();
         }).catch(function(err) {
@@ -108,3 +111,12 @@ App = {
       App.init();
     });
   });
+
+  function getFormatDate(date){
+    var year = date.getFullYear();              //yyyy
+    var month = (1 + date.getMonth());          //M
+    month = month >= 10 ? month : '0' + month;  //month 두자리로 저장
+    var day = date.getDate();                   //d
+    day = day >= 10 ? day : '0' + day;          //day 두자리로 저장
+    return  year + '-' + month + '-' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
+}
