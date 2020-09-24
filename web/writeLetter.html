@@ -95,6 +95,11 @@
           $("#nowDate").text(res);
         });
       });
+
+      $("#opend").on("keyup", function() {
+          $(this).val($(this).val().replace(/[^0-9\-]/g,""));
+        });
+
     </script>
   </body>
 </html>
